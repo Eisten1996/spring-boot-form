@@ -6,14 +6,14 @@ import javax.validation.constraints.Size;
 
 public class Usuario {
 	private String identificador;
-	@NotEmpty(message = "El nombre no puede estar vacio")
+	@NotEmpty
 	private String nombre;
-	@NotEmpty(message = "El apellido no puede estar vacio")
+	@NotEmpty
 	private String apellido;
-	@NotEmpty(message = "El username no puede estar vacio")
+	@NotEmpty
 	@Size(max = 8, min = 3)
 	private String username;
-	@NotEmpty(message = "El password no puede estar vacio")
+	@NotEmpty
 	private String password;
 	@NotEmpty
 	@Email(message = "Correo con formato incorrecto")
