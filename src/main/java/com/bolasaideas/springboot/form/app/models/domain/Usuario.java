@@ -2,9 +2,11 @@ package com.bolasaideas.springboot.form.app.models.domain;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Usuario {
+	@Pattern(regexp = "[0-9]{2}[,.][\\d]{3}[,.][\\d]{3}[-][A-Z]{1}")
 	private String identificador;
 	@NotEmpty
 	private String nombre;
