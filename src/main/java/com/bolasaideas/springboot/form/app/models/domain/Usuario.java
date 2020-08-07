@@ -1,7 +1,10 @@
 package com.bolasaideas.springboot.form.app.models.domain;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.bolasaideas.springboot.form.app.validation.IdentificadorRegex;
@@ -23,6 +26,10 @@ public class Usuario {
 	@Requerido
 	@Email(message = "Correo con formato incorrecto")
 	private String email;
+	@NotNull
+	@Min(5)
+	@Max(5000)
+	private Integer cuenta;
 
 	public String getNombre() {
 		return nombre;
@@ -70,6 +77,14 @@ public class Usuario {
 
 	public void setIdentificador(String identificador) {
 		this.identificador = identificador;
+	}
+
+	public Integer getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(Integer cuenta) {
+		this.cuenta = cuenta;
 	}
 
 }
