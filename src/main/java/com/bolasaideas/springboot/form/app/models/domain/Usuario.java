@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.bolasaideas.springboot.form.app.validation.IdentificadorRegex;
+import com.bolasaideas.springboot.form.app.validation.Requerido;
 
 public class Usuario {
 	// @Pattern(regexp = "[0-9]{2}[,.][\\d]{3}[,.][\\d]{3}[-][A-Z]{1}")
@@ -12,13 +13,14 @@ public class Usuario {
 	private String identificador;
 	// @NotEmpty
 	private String nombre;
-	@NotBlank
+	// @NotBlank
+	@Requerido
 	private String apellido;
 	@Size(max = 8, min = 3)
 	private String username;
 	@NotBlank
 	private String password;
-	@NotBlank
+	@Requerido
 	@Email(message = "Correo con formato incorrecto")
 	private String email;
 
