@@ -3,7 +3,9 @@ package com.bolasaideas.springboot.form.app.controllers;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -43,8 +45,17 @@ public class FormController {
 	}
 
 	@ModelAttribute("paises")
-	public List<String> paise() {
+	public List<String> paises() {
 		return Arrays.asList("Peru", "Argentina", "Brasil");
+	}
+
+	@ModelAttribute("paisesMap")
+	public Map<String, String> paisesMap() {
+		Map<String, String> paises = new HashMap<String, String>();
+		paises.put("PE", "Peru");
+		paises.put("AR", "Argentina");
+		paises.put("BR", "Brasil");
+		return paises;
 	}
 
 	@GetMapping("/form")
