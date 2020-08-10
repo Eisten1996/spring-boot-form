@@ -10,8 +10,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.bolasaideas.springboot.form.app.validation.IdentificadorRegex;
 import com.bolasaideas.springboot.form.app.validation.Requerido;
 
@@ -37,7 +35,7 @@ public class Usuario {
 	private Integer cuenta;
 	@NotNull
 	@Past
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	// @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
 
 	public String getNombre() {
