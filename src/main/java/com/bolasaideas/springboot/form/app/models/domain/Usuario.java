@@ -1,11 +1,13 @@
 package com.bolasaideas.springboot.form.app.models.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
@@ -39,6 +41,9 @@ public class Usuario {
 	private Date fechaNacimiento;
 	@NotNull
 	private Pais pais;
+	
+	@NotEmpty
+	private List<String> roles;
 
 	public String getNombre() {
 		return nombre;
@@ -111,5 +116,14 @@ public class Usuario {
 	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+	
 
 }

@@ -1,6 +1,7 @@
 package com.bolasaideas.springboot.form.app.controllers;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -35,10 +36,10 @@ public class FormController {
 
 	@Autowired
 	private UsuarioValidador validador;
-	
+
 	@Autowired
 	private PaisService paisService;
-	
+
 	@Autowired
 	private PaisPropertyEditor paisEditor;
 
@@ -57,6 +58,15 @@ public class FormController {
 	@ModelAttribute("listaPaises")
 	public List<Pais> listaPaises() {
 		return paisService.listar();
+	}
+
+	@ModelAttribute("listaRolesString")
+	public List<String> listaRolesString() {
+		List<String> roles = new ArrayList<>();
+		roles .add("ROLE_ADMIN");
+		roles .add("ROLE_USER");
+		roles .add("ROLE_MODERADOR");
+		return roles;
 	}
 
 	@ModelAttribute("paises")
