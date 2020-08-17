@@ -21,12 +21,14 @@
 		<li th:text="${#dates.format(usuario.fechaNacimiento,'dd/MM/yyyy')}"></li>
 		<li
 			th:text="${#calendars.format(usuario.fechaNacimiento,'dd/MM/yyyy')}"></li>
+		<li th:text="'Habilitado : '+${usuario.habilitar}"></li>
 	</ul>
 
 	<div>
-	<h1>Roles</h1>
+		<h1>Roles</h1>
 		<ul>
-			<li th:each="role: ${usuario.roles}" th:text="${role.id}+': '+${role.nombre}+'=>'+${role.role}"></li>
+			<li th:each="role: ${usuario.roles}"
+				th:text="${role.id}+': '+${role.nombre}+'=>'+${role.role}"></li>
 		</ul>
 	</div>
 
