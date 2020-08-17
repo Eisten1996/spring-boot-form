@@ -41,11 +41,11 @@ public class Usuario {
 	private Date fechaNacimiento;
 	@NotNull
 	private Pais pais;
-
 	@NotEmpty
 	private List<Role> roles;
-
 	private Boolean habilitar;
+	@NotEmpty
+	private String genero;
 
 	public String getNombre() {
 		return nombre;
@@ -133,6 +133,14 @@ public class Usuario {
 
 	public void setHabilitar(Boolean habilitar) {
 		this.habilitar = habilitar;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 }
