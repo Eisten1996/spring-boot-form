@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.bolasaideas.springboot.form.app.editors.NombreMayusculaEditor;
+import com.bolasaideas.springboot.form.app.models.domain.Pais;
 import com.bolasaideas.springboot.form.app.models.domain.Usuario;
 import com.bolasaideas.springboot.form.app.validation.UsuarioValidador;
 
@@ -42,6 +43,11 @@ public class FormController {
 		binder.registerCustomEditor(Date.class, "fechaNacimiento", new CustomDateEditor(dateFormat, true));
 		binder.registerCustomEditor(String.class, "nombre", new NombreMayusculaEditor());
 		binder.registerCustomEditor(String.class, "apellido", new NombreMayusculaEditor());
+	}
+
+	@ModelAttribute("listaPaises")
+	public List<Pais> listaPaises() {
+		return Arrays.asList(new Pais(1, "PE", "Peru"), new Pais(2, "AR", "Argentina"), new Pais(3, "BR", "Brasil"));
 	}
 
 	@ModelAttribute("paises")
