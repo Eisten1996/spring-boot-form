@@ -10,7 +10,7 @@ public class Pais {
 		this.codigo = codigo;
 		this.nombre = nombre;
 	}
-	
+
 	public Pais() {
 	}
 
@@ -36,6 +36,12 @@ public class Pais {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.id.toString();
 	}
 
 }
