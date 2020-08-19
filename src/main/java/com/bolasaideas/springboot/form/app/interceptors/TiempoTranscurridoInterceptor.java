@@ -21,6 +21,9 @@ public class TiempoTranscurridoInterceptor implements HandlerInterceptor {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		// TODO Auto-generated method stub
+		if (request.getMethod().equalsIgnoreCase("post")) {
+			return true;
+		}
 		if (handler instanceof HandlerMethod) {
 			HandlerMethod method = (HandlerMethod) handler;
 			logger.info("Es un metodo del controlador " + method.getMethod().getName());
@@ -31,7 +34,7 @@ public class TiempoTranscurridoInterceptor implements HandlerInterceptor {
 		request.setAttribute("tiempoInicio", tiempoInicio);
 
 		Random random = new Random();
-		Integer demora = random.nextInt(500);
+		Integer demora = random.nextInt(100);
 		Thread.sleep(demora);
 
 		return true;
